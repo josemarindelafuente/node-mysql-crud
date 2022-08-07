@@ -1,0 +1,5 @@
+https://youtu.be/3-bjDx9v2uw?t=246
+- npm init -y
+
+https://youtu.be/3-bjDx9v2uw?t=398
+- npm install express nodemon ejs mysql
