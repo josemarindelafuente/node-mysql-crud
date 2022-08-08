@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 08-08-2022 a las 02:24:57
+-- Tiempo de generación: 08-08-2022 a las 20:32:28
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.4.6
 
@@ -41,7 +41,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `rol`) VALUES
 (1, 'jmarin', 'jmarin@gmail.com', 'admin'),
-(2, 'usuario1', 'usuario1@gmail.com', 'suscriptor');
+(2, 'usuario1', 'usuario1@gmail.com', 'suscriptor'),
+(3, 'usuario2', 'usuario2@gmail.com', 'suscriptor'),
+(4, 'usuario3', 'usuario3@gmail.com', 'suscriptor');
 
 --
 -- Índices para tablas volcadas
@@ -61,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

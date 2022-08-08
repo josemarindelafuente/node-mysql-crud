@@ -15,6 +15,10 @@
 
     <h1>plantilla index</h1>
 
+    <a href="/create">
+      <button class="btn btn-primary">Agregar</button>
+    </a>
+
 <table class="table">
     <thead>
       <tr>
@@ -30,8 +34,7 @@
 
 
             <% results.forEach( (user)=>{ %>
-                
-                
+                        
                 <tr>
                     <th scope="row"> <%= user.id  %></th>
                     <td><%= user.name  %></td>
@@ -41,8 +44,7 @@
                         <a href="/editar">Editar</a> - <a href="/delete">Eliminar</a>
                     </td>
                 </tr>
-                
-                
+                             
             <% }) %>
 
 
