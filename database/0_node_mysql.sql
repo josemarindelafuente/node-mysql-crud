@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 07-08-2022 a las 23:04:27
+-- Tiempo de generación: 08-08-2022 a las 02:24:57
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 7.4.6
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `user` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,9 +39,9 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `rol`) VALUES
-(1, 'jmarin', 'admin'),
-(2, 'usuario1', 'suscriptor');
+INSERT INTO `users` (`id`, `name`, `email`, `rol`) VALUES
+(1, 'jmarin', 'jmarin@gmail.com', 'admin'),
+(2, 'usuario1', 'usuario1@gmail.com', 'suscriptor');
 
 --
 -- Índices para tablas volcadas
