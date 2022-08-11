@@ -16,19 +16,19 @@
         <form action="/save" method="post">
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" autofocus>
+              <input type="text" class="form-control" id="name" name="name" autofocus>
               <div class="form-text">nombre de usuario.</div>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="email" name="email">
                 <div class="form-text">Correo electrónico del usuario.</div>
             </div>
 
             <div class="mb-3">
                 <label for="roles" class="form-label">Datalist example</label>
-                <input class="form-control" list="listaDeRoles" id="roles" placeholder="Buscar...">
+                <input class="form-control" list="listaDeRoles" id="roles" name="roles" placeholder="Buscar...">
                 <datalist id="listaDeRoles">
                   <option value="Admin">
                   <option value="Suscriptor">
@@ -38,10 +38,11 @@
 
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" id="password" name="password">
             </div>
 
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="/" class="btn btn-secondary">Cancelar</a>
 
           </form>
 

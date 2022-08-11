@@ -22,7 +22,10 @@ router.get("/", (req, res)=>{
 
 router.get("/create", (req, res)=>{
     res.render("create")
-})
+});
+
+const userController = require("../controllers/userController");
+router.post("/save" , userController.save);
 
 
 
