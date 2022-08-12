@@ -5,7 +5,6 @@ exports.save = (req, res) => {
     const email = req.body.email;
     const rol = req.body.roles;
 
-
     // usando destructuring
     //const {name, email, rol} = req.body; 
 
@@ -19,3 +18,21 @@ exports.save = (req, res) => {
         }
     } );
 }
+
+exports.update =  ( req, res ) => {
+    const id = req.body.id;
+    const name = req.body.name;
+    const email = req.body.email;
+    const rol = req.body.roles;
+
+    conection.query("UPDATE users SET ? where id= ? ", [ {name:name , email:email, rol:rol} , id ] , (error, results)=>{
+
+        if (error) {
+            console.error("no se puedo agregar el registro a la base de datos: " + error);
+        } else {
+            res.redirect("/");
+        }
+
+    });
+
+};
