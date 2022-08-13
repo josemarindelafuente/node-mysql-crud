@@ -45,6 +45,18 @@ router.get("/edit/:id", (req, res)=>{
     //res.render("edit");
 });
 
+router.get("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    conection.query("DELETE FROM users WHERE id= ?" , [id], (error, results)=>{
 
+        if (error){
+            throw "error: " + error;
+        } else {
+            //res.send(results);
+            res.redirect("/" );
+        }
+
+    });
+});
 
 module.exports = router;
