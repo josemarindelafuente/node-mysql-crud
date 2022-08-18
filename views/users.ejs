@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col-12">
 
-    <a href="/create"><button class="btn btn-primary"><i class="fas fa-solid fa-plus"></i> Agregar</button></a>
+    <a href="/createUser"><button class="btn btn-primary"><i class="fas fa-solid fa-plus"></i> Agregar</button></a>
 
     <hr>        
 
@@ -50,8 +50,8 @@
                         <td><%= user.email  %></td>
                         <td><%= user.rol  %></td>
                         <td>
-                            <a href="/edit/<%= user.id  %>" class="btn btn-info"><i class="Sfas fa-pen-to-square"></i> Editar</a>
-                            <a onclick="confirmation(<%= user.id  %>)" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar</a>
+                            <a href="/editUser/<%= user.id  %>" class="btn btn-info"><i class="fas fa-pen-to-square"></i> Editar </a>
+                            <a onclick="confirmation(<%= user.id  %>)" class="btn btn-danger"><i class="fas fa-trash-can"></i> Eliminar </a>
                         </td>
                     </tr>                                     
                 <% }) %>

@@ -10,12 +10,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>DataTables</h1>
+          <h1>Editar registro</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">DataTables</li>
+            <li class="breadcrumb-item active">Editar registro</li>
           </ol>
         </div>
       </div>
@@ -29,22 +29,28 @@
       <div class="col-12">
 
 
-        <form action="/save" method="post">
+
+
+<% if (user) { %> 
+        <form action="/updateUser" method="post">
+
+            <input hidden id="id" name="id" value="<%= user.id %>">
+
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" autofocus>
+              <input type="text" class="form-control" id="name" name="name" value="<%= user.name  %>" autofocus>
               <div class="form-text">nombre de usuario.</div>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email">
+                <input type="email" class="form-control" id="email" name="email" value="<%= user.email  %>" >
                 <div class="form-text">Correo electrónico del usuario.</div>
             </div>
 
             <div class="mb-3">
                 <label for="roles" class="form-label">Datalist example</label>
-                <input class="form-control" list="listaDeRoles" id="roles" name="roles" placeholder="Buscar...">
+                <input class="form-control" list="listaDeRoles" id="roles" name="roles" placeholder="Buscar..." value="<%= user.rol  %>">
                 <datalist id="listaDeRoles">
                   <option value="Admin">
                   <option value="Suscriptor">
@@ -57,22 +63,18 @@
               <input type="password" class="form-control" id="password" name="password">
             </div>
 
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Editar</button>
             <a href="/" class="btn btn-secondary">Cancelar</a>
 
           </form>
+<% } %>    
 
-
-
-
-
-
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container-fluid -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
 </section>
 <!-- /.content -->
 </div>

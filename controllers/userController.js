@@ -1,6 +1,6 @@
 const conection = require("../database/db");
 
-exports.save = (req, res) => {
+exports.saveUser = (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const rol = req.body.roles;
@@ -19,7 +19,7 @@ exports.save = (req, res) => {
     } );
 }
 
-exports.update =  ( req, res ) => {
+exports.updateUser =  ( req, res ) => {
     const id = req.body.id;
     const name = req.body.name;
     const email = req.body.email;
