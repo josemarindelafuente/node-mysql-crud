@@ -3,9 +3,16 @@ const router = express.Router();
 
 const conection = require("../database/db");
 
+const userController = require("../controllers/userController");
+const authController = require("../controllers/authController");
 
 
-router.get("/", (req, res)=>{
+router.get("/", (req, res) =>{
+ res.render("index");
+});
+
+
+router.get("/users", (req, res)=>{
     //res.send("Hola mundo");
     conection.query("select * from users", (error, results)=>{
         if (error){
@@ -24,7 +31,6 @@ router.get("/createUser", (req, res)=>{
     res.render("createUser")
 });
 
-const userController = require("../controllers/userController");
 router.post("/saveUser" , userController.saveUser);
 
 
@@ -59,5 +65,8 @@ router.get("/deleteUser/:id", (req, res) => {
 
     });
 });
+
+
+router.get("/logout", authController.logout);
 
 module.exports = router;

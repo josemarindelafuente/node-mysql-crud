@@ -14,7 +14,7 @@ exports.saveUser = (req, res) => {
         if (error) {
             console.error("no se puedo agregar el registro a la base de datos: " + error);
         } else {
-            res.redirect("/")
+            res.redirect("/users")
         }
     } );
 }
@@ -30,7 +30,7 @@ exports.updateUser =  ( req, res ) => {
         if (error) {
             console.error("no se puedo agregar el registro a la base de datos: " + error);
         } else {
-            res.redirect("/");
+            res.redirect("/users");
         }
 
     });
