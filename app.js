@@ -1,13 +1,17 @@
 const express = require("express");
 const app = express();
-const path =require("path");
+const path = require("path");
+const dotenv = require("dotenv");
+//const cookieParser = require("cookie-parser");
+
+dotenv.config({ path : './env/.env'});
 
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({extended:false}));
 
-// import from router
 app.use("/", require("./routes/router")),
+//app.use(cookieParser);
 
 app.use(express.static(path.join(__dirname, '/public')));
 

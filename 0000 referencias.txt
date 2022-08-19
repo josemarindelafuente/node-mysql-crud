@@ -3,3 +3,6 @@ https://youtu.be/3-bjDx9v2uw?t=246
 
 https://youtu.be/3-bjDx9v2uw?t=398
 - npm install express nodemon ejs mysql
+
+https://youtu.be/3-bjDx9v2uw?t=13826
+- npm install bcryptjs cookie-parser dotenv jsonwebtoken express-session
