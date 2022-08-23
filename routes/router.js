@@ -60,7 +60,7 @@ router.get("/deleteUser/:id", (req, res) => {
             throw "error: " + error;
         } else {
             //res.send(results);
-            res.redirect("/" );
+            res.redirect("/users" );
         }
 
     });
@@ -75,6 +75,14 @@ router.get("/register" , (req, res) => {
     res.render("register");
 });
 
+router.post("register", (req, res) =>{
+
+});
+
+
 router.get("/logout", authController.logout);
+
+
+
 
 module.exports = router;
