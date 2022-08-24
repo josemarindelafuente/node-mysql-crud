@@ -24,7 +24,7 @@
                 <label for="email">Email address</label>
                 </div>
                 <div class="form-floating">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
                 <label for="password">Password</label>
                 </div>
 
@@ -40,6 +40,22 @@
 
 </main>
 
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+
+    <% if(alert) { %>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text:'<%= alertMessage %>',
+          icon:'<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then(()=>{
+          window.location = '/<%= ruta %>'
+        })
+      </script>
+    <% } %>
 
     
   </body>

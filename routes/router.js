@@ -68,14 +68,18 @@ router.get("/deleteUser/:id", (req, res) => {
 
 
 router.get("/login" , (req, res)=>{
-    res.render("login");
+    res.render("login" , {alert:false});
 })
+router.post("/login", authController.login);
+
+
 
 router.get("/register" , (req, res) => {
     res.render("register" , { alert:false });
 });
 
 router.post("/register", authController.register);
+
 
 
 router.get("/logout", authController.logout);
