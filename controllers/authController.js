@@ -91,6 +91,8 @@ exports.login = async (req, res)=>{
             })
         }else{
             conexion.query('SELECT * FROM users WHERE email = ?', [email], async (error, results)=>{
+
+                //login con errores - alguno de los datos se ingreso mal
                 if( results.length == 0 || ! (await bcryptjs.compare(pass, results[0].pass)) ){
                     res.render('login', {
                         alert: true,
@@ -104,6 +106,7 @@ exports.login = async (req, res)=>{
                 }else{
                     //login OK
                     const id = results[0].id
+
                     const token = jwt.sign({id:id}, process.env.JWT_SECRETO, {
                         expiresIn: process.env.JWT_EXPIRATION_TIME
                     });
@@ -112,6 +115,7 @@ exports.login = async (req, res)=>{
                         expires: new Date(Date.now()+process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000),
                         httpOnly: true
                     }
+                    
                     res.cookie('jwt', token, cookiesOptions);
 
                     res.render('login', {
