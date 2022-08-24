@@ -6,3 +6,6 @@ https://youtu.be/3-bjDx9v2uw?t=398
 
 https://youtu.be/3-bjDx9v2uw?t=13826
 - npm install bcryptjs cookie-parser dotenv jsonwebtoken express-session
+
+https://youtu.be/3-bjDx9v2uw?t=16241
+- npm install nodemailer

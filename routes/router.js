@@ -72,12 +72,10 @@ router.get("/login" , (req, res)=>{
 })
 
 router.get("/register" , (req, res) => {
-    res.render("register");
+    res.render("register" , { alert:false });
 });
 
-router.post("register", (req, res) =>{
-
-});
+router.post("/register", authController.register);
 
 
 router.get("/logout", authController.logout);
