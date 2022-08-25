@@ -4,7 +4,6 @@ const conexion = require('../database/db');
 const { promisify } = require('util');
 const nodemailer = require('nodemailer');
 
-
 exports.register = async (req, res) => {
     try {
         const name = req.body.name;
@@ -135,8 +134,36 @@ exports.login = async (req, res)=>{
     }
 }
 
+
+
+
+
+
+//procedure to authenticate
+exports.isAuthenticated = async (req, res, next)=>{
+
+    if (req.cookies.jwt) {
+        try {
+            const decodificada = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRETO)
+            conexion.query('SELECT * FROM users WHERE id = ?', [decodificada.id], (error, results)=>{
+                if(!results){return next()}
+
+                req.name = results[0]
+                return next()
+            })
+        } catch (error) {
+            console.log(error)
+            return next()
+        }
+    }else{
+        res.redirect('/login')        
+    }
+    
+} 
+
+//procedure to logout
 exports.logout = (req, res) => {
-    console.log("salir");
-    res.redirect("/");
-};
+    res.clearCookie('jwt')   
+    return res.redirect('/login')
+}
 

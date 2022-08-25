@@ -1,16 +1,26 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router()
 
-const conection = require("../database/db");
+//to invoke the methods for the CRUD of users
+const userController = require('../controllers/userController')
+const authController = require('../controllers/authController')
+//const { Router } = require('express')
 
-const userController = require("../controllers/userController");
-const authController = require("../controllers/authController");
+
+//path to send the data in json format
+//const { json } = require('express');
+
+//Invoke the database connection
+const conection = require('../database/db')
 
 
-router.get("/", (req, res) =>{
+
+
+
+
+router.get("/" , authController.isAuthenticated , (req, res) =>{
  res.render("index");
 });
-
 
 router.get("/users", (req, res)=>{
     //res.send("Hola mundo");
@@ -25,17 +35,13 @@ router.get("/users", (req, res)=>{
 
 });
 
-
-
 router.get("/createUser", (req, res)=>{
     res.render("createUser")
 });
 
 router.post("/saveUser" , userController.saveUser);
 
-
 router.post("/updateUser" , userController.updateUser);
-
 
 router.get("/editUser/:id", (req, res)=>{
     const id = req.params.id;
@@ -66,21 +72,17 @@ router.get("/deleteUser/:id", (req, res) => {
     });
 });
 
-
 router.get("/login" , (req, res)=>{
     res.render("login" , {alert:false});
 })
+
 router.post("/login", authController.login);
-
-
 
 router.get("/register" , (req, res) => {
     res.render("register" , { alert:false });
 });
 
 router.post("/register", authController.register);
-
-
 
 router.get("/logout", authController.logout);
 
